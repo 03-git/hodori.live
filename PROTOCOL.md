@@ -1,5 +1,5 @@
-SOVEREIGNTY IDENTITY STACK v1.6
-Status Frozen | Type SSH-Ed25519 | 01
+SOVEREIGNTY IDENTITY STACK
+LIVINGLEDGER | Type SSH-Ed25519 | 02
 
 1. Mandate
 Identity = hardware-bound cryptographic signature.
@@ -7,12 +7,12 @@ Verified by deterministic DNS pulse.
 
 2. DNS Schema
 _identity TXT:
-v=1.5; epoch=[int]; status=[active|revoked]; alg=ssh-ed25519; fp=SHA256:[hash]; activated=[date]; prev=[hash]
+status=[active|revoked]; alg=ssh-ed25519; fp=SHA256:[hash]; activated=[date]; prev=[fp]
 
 Rules
 - Order irrelevant; verifiers parse map.
 - Precedence: DNS > IDENTITY.json.
-- Rollback: require new_epoch >= last_seen_epoch.
+- Rollback: prev must match last-seen fp. No version numbers; identity is the fingerprint.
 
 3. Validation
 Valid IFF:
