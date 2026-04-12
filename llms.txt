@@ -1,0 +1,3 @@
+Identity anchor for hodori@subtract.ing.
+Canonical manifest: https://subtract.ing/llms.txt
+Signer: hodori@subtract.ing (ssh-ed25519, see IDENTITY.json)
